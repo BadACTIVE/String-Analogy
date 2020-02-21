@@ -31,6 +31,39 @@ public static int match(String word, String inword, int default_percentage) {
 How to use:
 int percentage = match("John", "J0hnny", 100);
 System.out.println("The match percentage for 'John' in 'J0hnny' is " + percentage);
+The output is 75.
 ```
 
 # String correction
+The string correction codes. (Maybe i may add algorithm.)
+
+	What does this code do ? Let me explain with example:
+		Our string is "bbbllaaa   bbbbblllaaaa".
+		The output is "bla bla".
+		Cool right ?
+		
+```
+NOTE: My friend helped(Him nickname is MegaCrafter.) while writing this code.
+public static String correct(String str) {
+        String s = str + "\0";
+        char temp = '\0';
+        short count = 0;
+        for (short i = 0; i < s.length(); i++) {
+            char c = s.toCharArray()[i];
+            if (temp == '\0') {
+                temp = c;
+                continue;
+            }
+            if (Character.toLowerCase(c) != Character.toLowerCase(temp)) {
+                s = s.substring(0, count++) + temp + s.substring(i);
+                i = count;
+                temp = c;
+                if (c == '\0') {
+                    s = s.replaceAll("\0", "");
+                    break;
+                }
+            }
+        }
+        return s;
+    }
+```
