@@ -18,14 +18,15 @@ public static int match(String word, String inword, int default_percentage) {
 	int matched = 0;
 	word = word.toLowerCase();
 	inword = inword.toLowerCase();
+	
 	for(int i = 0; i < word.length(); i++) {
-		if(i < inword.length()) {
-			if(word.charAt(i) == inword.charAt(i)) {
+		if(matched < inword.length()) {
+			if(word.charAt(i) == inword.charAt(matched)) {
 				matched++;
 			}
 		}
 	}
-	return (default_percentage / inword.length()) * matched;
+	return (default_percentage / word.length()) * matched;
 }
 
 How to use:
@@ -72,5 +73,51 @@ How to use:
 	String corrected = correct("HEEEYYY");
 	System.out.println("Output: " + corrected);
 	//The output is "HEY".
+   
+```
+
+# Continuation of The String correction
+The string correction codes. (Maybe i may add algorithm.)
+
+	What does this code do ? Let me explain with example:
+		Our string is "bbbllaaa".
+		And we believe, it's should be "bla".
+		We check it and if code turn null, cant be but
+		turn any, it can be!
+		Cool right ?
+		
+```
+
+public static String correct(String str, String str2) {
+	String temp = "";
+	int tempi = 0;
+		
+	for(int i = 0; i < str.length(); i++) {
+		if(tempi < str2.length()) {
+			while(Character.toLowerCase(str.charAt(i)) != Character.toLowerCase(str2.charAt(tempi)) ) {
+				if(tempi + 1 < str2.length() && i - 1 > 0) {					
+					if(Character.toLowerCase(str.charAt(i - 1)) == Character.toLowerCase(str2.charAt(tempi))) {
+						i--;
+						break;
+					}
+					else if(Character.toLowerCase(str.charAt(i)) == Character.toLowerCase(str2.charAt(tempi + 1))) {
+						i = i - 2;
+						break;
+					}
+				}
+				i++;
+			}
+			temp += str.charAt(i);
+			tempi++;
+		} else break;		
+	}
+        return temp;
+}
+
+How to use:
+	String corrected = correct("HEEEUUYYY", "hey");
+	if(corrected != null) System.out.println("Output: " + corrected);
+	else System.out.println("it couldnt fixed!");
+	//The output is "hey".
    
 ```
