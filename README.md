@@ -82,8 +82,7 @@ The string correction codes. (Maybe i may add algorithm.)
 	What does this code do ? Let me explain with example:
 		Our string is "bbbllaaa".
 		And we believe, it's should be "bla".
-		We check it and if code turn null, cant be but
-		turn any, it can be!
+		We check it and if code turn null, cant be but turn any, it can be!
 		Cool right ?
 		
 ```
