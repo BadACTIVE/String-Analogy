@@ -44,26 +44,33 @@ The string correction codes. (Maybe i may add algorithm.)
 		
 ```
 NOTE: My friend helped(Him nickname is MegaCrafter.) while writing this code.
+
 public static String correct(String str) {
-        String s = str + "\0";
-        char temp = '\0';
-        short count = 0;
-        for (short i = 0; i < s.length(); i++) {
-            char c = s.toCharArray()[i];
-            if (temp == '\0') {
-                temp = c;
-                continue;
-            }
-            if (Character.toLowerCase(c) != Character.toLowerCase(temp)) {
-                s = s.substring(0, count++) + temp + s.substring(i);
-                i = count;
-                temp = c;
-                if (c == '\0') {
-                    s = s.replaceAll("\0", "");
-                    break;
-                }
-            }
-        }
-        return s;
-    }
+	String s = str + "\0";
+	char temp = '\0';
+	short count = 0;
+	for (short i = 0; i < s.length(); i++) {
+		char c = s.toCharArray()[i];
+		if (temp == '\0') {
+			temp = c;
+			continue;
+		}
+		if (Character.toLowerCase(c) != Character.toLowerCase(temp)) {
+			s = s.substring(0, count++) + temp + s.substring(i);
+			i = count;
+			temp = c;
+			if (c == '\0') {
+				s = s.replaceAll("\0", "");
+				break;
+			}
+		}
+	}
+	return s;
+}
+
+How to use:
+	String corrected = correct("HEEEYYY");
+	System.out.println("Output: " + corrected);
+	//The output is "HEY".
+   
 ```
