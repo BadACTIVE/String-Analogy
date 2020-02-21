@@ -1,5 +1,5 @@
-# String-Analogy
-The string analogy algorithm and java codes.
+# String Matching with percentage
+The string matching algorithm and java codes.
 
 	Example:
 		You want to check if the word matches a="John" in b="J0hnny".
@@ -32,3 +32,5 @@ How to use:
 int percentage = match("John", "J0hnny", 100);
 System.out.println("The match percentage for 'John' in 'J0hnny' is " + percentage);
 ```
+
+# String correction
