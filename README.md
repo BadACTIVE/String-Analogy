@@ -29,9 +29,9 @@ public static int match(String word, String inword, int default_percentage) {
 }
 
 How to use:
-int percentage = match("John", "J0hnny", 100);
-System.out.println("The match percentage for 'John' in 'J0hnny' is " + percentage);
-The output is 75.
+	int percentage = match("John", "J0hnny", 100);
+	System.out.println("The match percentage for 'John' in 'J0hnny' is " + percentage);
+	//The output is 75.
 ```
 
 # String correction
