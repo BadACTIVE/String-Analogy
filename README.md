@@ -45,6 +45,7 @@ The string correction codes. (Maybe i may add algorithm.)
 		
 ```
 NOTE: My friend helped(Him nickname is MegaCrafter.) while writing this code.
+JAVA CODES:
 
 public static String correct(String str) {
 	String s = str + "\0";
@@ -86,6 +87,7 @@ The string correction codes. (Maybe i may add algorithm.)
 		Cool right ?
 		
 ```
+JAVA CODES:
 
 public static String correct(String str, String str2) {
 	String temp = "";
