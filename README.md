@@ -2,12 +2,12 @@
 The string matching algorithm and java codes.
 
 	Example:
-		You want to check if the word matches a="John" in b="J0hnny".
+		You want to check if the word matches a="John" in b="Johnny".
 		So what you need to do:<br>
 			Set the values to lowercase.
-			Get values length from a.(4)
+			Get values length from b.(6)
 			c = Check which letters match.(3)
-			Calculate the percentage.( (100 / a) * c)
+			Calculate the percentage.( (100 / b) * c)
 			
 		Congratulations! You got the match percentage!
 
@@ -30,8 +30,8 @@ public static int match(String word, String inword, int default_percentage) {
 }
 
 How to use:
-	int percentage = match("John", "J0hnny", 100);
-	System.out.println("The match percentage for 'John' in 'J0hnny' is " + percentage);
+	int percentage = match("Johnny", "John", 100);
+	System.out.println("The match percentage for 'John' in 'Johnny' is " + percentage);
 	//The output is 75.
 ```
 
