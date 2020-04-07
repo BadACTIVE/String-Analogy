@@ -122,3 +122,44 @@ How to use:
 	//The output is "hey".
    
 ```
+# Some String variable get/set value codes.
+```
+JAVA CODES:
+
+public static String getVariableValue(String like, String format, String variable) {
+		if(format.length() <= like.length() || format.length() <= like.length() - variable.length()) {
+			String end = "";
+			String value = "";
+			
+			int headi = format.indexOf(variable);
+			end = format.substring(headi + 3, format.length());
+			value = like.substring(headi);
+			value = value.substring(0, value.lastIndexOf(end));
+			return value;
+		} else return "Formats doesnt matched.";
+	}
+
+public static String setVariableValue(String like, String format, String variable, String set_value) {
+		if(format.length() <= like.length() || format.length() <= like.length() - variable.length()) {
+			String head = "";
+			String end = "";
+			String value = "";
+			
+			int headi = format.indexOf(variable);
+			head = format.substring(0, format.indexOf(variable));
+			end = format.substring(headi + 3, format.length());
+			value = head + set_value + end;
+			return value;
+		} else return "Formats doesnt matched.";
+	}
+	
+How to use:
+	String variable_name = "%x%";
+	String getted_value = getVariableValue("set time to day now", "set time to "+variable_name+" now", variable_name);
+	System.out.println("Output: " + getted_value);
+	//The output is "day".
+	
+	String setted_text = setVariableValue("set time to "+variable_name+" now", variable_name, "day");
+	System.out.println("Output: " + setted_value);
+	//The output is "set time to day now".
+```
